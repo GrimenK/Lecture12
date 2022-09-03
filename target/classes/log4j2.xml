@@ -1,0 +1,11 @@
+<Configuration>
+    <Appenders>
+        <Console name="console"></Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="console" level="all"/>
+        </Root>
+    </Loggers>
+</Configuration>
