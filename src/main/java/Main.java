@@ -16,6 +16,7 @@ public class Main {
         firstTask();
         fourthTask();
         thirdTask();
+        fifthTask();
     }
 
     public static void firstTask(){
@@ -71,6 +72,28 @@ public class Main {
         fields[3].set(user,120000);
         fields[4].set(user,(String) "tEST");
         LOGGER.info(user);
+    }
+
+    public static void fifthTask(){
+        LOGGER.info("5th TASK \n");
+
+        User user = new User();
+        String[] args = {"a1","b2","etc."};
+        int[] argsInt = {1,2,3,4,5};
+
+        Class userClass = User.class;
+        try {
+            Method methodStrArgs = userClass.getDeclaredMethod("myMethod", String[].class);
+            methodStrArgs.invoke(user, (Object) args);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        try {
+            Method methodIntArgs = userClass.getDeclaredMethod("myMethod", String.class, int[].class);
+            methodIntArgs.invoke(user,"String", argsInt);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
     }
 
 }

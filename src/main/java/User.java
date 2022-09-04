@@ -69,4 +69,12 @@ public class User {
     public int methodForInvoke(int age){
         return this.age + age;
     }
+
+    public void myMethod(String a, int ... args){
+        System.out.println("This is method with int ... args");
+    }
+
+    public void myMethod(String ... args){
+        System.out.println("This is method with String ... args");
+    }
 }
